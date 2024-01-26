@@ -40,6 +40,22 @@
     <!-- Scrollbar CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/overlay-scroll/OverlayScrollbars.min.css') }}">
 
+<style>
+   .btn2 {
+      padding: 10px 20px;
+      color: #000;
+      background-color: #e0e0e0;
+      border-radius: 15px;
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+.icon img {
+      height: 20px;
+      margin-right: 5px;
+    }
+
+
+</style>
 	</head>
 
 
@@ -59,11 +75,13 @@
 		<!-- Loading wrapper end -->
 
 		<!-- Login box start -->
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
 
 			<div class="login-box">
+
 				<div class="login-form">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
 					<a href="" class="login-logo">
                         <img src="{{ asset('images/logo.svg') }}" alt="Melon Admin Dashboard" />
 					</a>
@@ -87,13 +105,19 @@
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
 					</div>
 					<div class="login-form-actions">
+
 						<button type="submit" class="btn"> <span class="icon"> <i class="bi bi-arrow-right-circle"></i> </span>
 							Login</button>
 					</div>
-
+                </form>
+                <a href="{{route('google-auth')}}" class="btn2">
+                    <span class="icon">
+                      <img src="{{asset('images/auth/google.png')}}" alt="Google Icon">
+                    </span>
+                    Login With Google
+                  </a>
 				</div>
 			</div>
-		</form>
 		<!-- Login box end -->
 
 		<!-- *************

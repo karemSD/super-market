@@ -154,7 +154,8 @@
                                                                             @auth('admin')
                                         <img src="{{ asset('images/' . Auth::guard('admin')->user()->image_url) }}" alt="Admin Templates">
                                         @else
-                                        <img src="{{ asset('images/' . Auth::user()->image_url) }}" alt="Admin Templates">
+                                        <img src="{{Auth::user()->image_url}}" alt="Admin Templates">
+                                        {{-- <img src="{{ asset('images/' . Auth::user()->image_url) }}" alt="Admin Templates"> --}}
                                         @endauth
 									</span>
 								</a>
